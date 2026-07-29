@@ -1,145 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenade E&M - 직급표</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Pretendard',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:#fff;
+    min-height:100vh;
+    padding:50px;
+    background-image:
+    radial-gradient(circle at top,#4d3900 0%,transparent 40%);
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.header h1{
+    font-size:48px;
+    color:#FFD54A;
+    letter-spacing:4px;
+    text-shadow:
+    0 0 10px #FFD54A,
+    0 0 30px rgba(255,213,74,.5);
+}
+
+.header p{
+    color:#aaa;
+    margin-top:10px;
+    font-size:15px;
+}
+
+.section{
+    margin-bottom:50px;
+}
+
+.section-title{
+    color:#FFD54A;
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:25px;
+    border-left:5px solid #FFD54A;
+    padding-left:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#181818;
+    border:1px solid rgba(255,213,74,.35);
+    border-radius:18px;
+    padding:22px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,
+    rgba(255,213,74,.08),
+    transparent 70%);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#FFD54A;
+    box-shadow:
+    0 0 20px rgba(255,213,74,.4),
+    0 0 50px rgba(255,213,74,.2);
+}
+
+.rank{
+    font-size:13px;
+    color:#FFD54A;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.title{
+    font-size:28px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.people{
+    color:#ddd;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.people span{
+    color:#777;
+}
+
+.footer{
+    margin-top:70px;
+    background:#181818;
+    border:1px solid rgba(255,213,74,.3);
+    border-radius:18px;
+    padding:25px;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+    background:#2b2b2b;
+    border-radius:50px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.fill{
+    width:20%;
+    height:100%;
+    background:linear-gradient(90deg,#FFD54A,#ffbf00);
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    color:#bbb;
+    margin-top:15px;
+}
+
+strong{
+    color:#FFD54A;
+}
+</style>
+</head>
 
 <body>
 
-<div class="sidebar">
+<div class="container">
 
-    <div class="logo">🏢 CHEESE</div>
+<div class="header">
+<h1>⚜️ SERENADE E&M ⚜️</h1>
+<p>Official Rank Board</p>
+</div>
 
-    <div class="menu">
-        <button onclick="showPage('dashboard')">🏠 대시보드</button>
-        <button onclick="showPage('members')">👥 조직원</button>
-        <button onclick="showPage('money')">💰 자금관리</button>
-        <button onclick="showPage('reports')">📝 보고서</button>
-        <button onclick="showPage('settings')">⚙️ 설정</button>
-    </div>
+<div class="section">
+
+<div class="section-title">
+👑 Executive
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="rank">CEO</div>
+<div class="title">대표이사</div>
+<div class="people">스텔</div>
+</div>
+
+<div class="card">
+<div class="rank">S.DIR</div>
+<div class="title">전무이사</div>
+<div class="people">
+스시<br>
+강혁
+</div>
+</div>
+
+<div class="card">
+<div class="rank">M.DIR</div>
+<div class="title">상무이사</div>
+<div class="people">
+마루<br>
+백수
+</div>
+</div>
+
+<div class="card">
+<div class="rank">C.DIR</div>
+<div class="title">수석이사</div>
+<div class="people">
+<span>N/A</span>
+</div>
+</div>
 
 </div>
 
-<div class="main">
+</div>
 
-    <!-- 대시보드 -->
-    <div id="dashboard" class="page active">
+<div class="section">
 
-        <h1>대시보드</h1>
+<div class="section-title">
+🛡 Management
+</div>
 
-        <br>
+<div class="grid">
 
-        <div class="card-container">
+<div class="card">
+<div class="rank">G.M</div>
+<div class="title">부장</div>
+<div class="people">재현</div>
+</div>
 
-            <div class="card">
-                <h2>총 조직원</h2>
-                <h1>0명</h1>
-            </div>
+<div class="card">
+<div class="rank">D.M</div>
+<div class="title">차장</div>
+<div class="people">
+초코머핀<br>
+효은
+</div>
+</div>
 
-            <div class="card">
-                <h2>조직 자금</h2>
-                <h1>₩0</h1>
-            </div>
+<div class="card">
+<div class="rank">MGR</div>
+<div class="title">과장</div>
+<div class="people">
+차차차<br>
+백산
+</div>
+</div>
 
-            <div class="card">
-                <h2>이번 주 수익</h2>
-                <h1>₩0</h1>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- 조직원 -->
-    <div id="members" class="page">
-
-        <h1>조직원 관리</h1>
-
-        <table>
-            <tr>
-                <th>닉네임</th>
-                <th>직급</th>
-                <th>활동횟수</th>
-                <th>경고</th>
-            </tr>
-
-            <tr>
-                <td>CHEESE</td>
-                <td>대표이사</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-
-            <tr>
-                <td>홍길동</td>
-                <td>부장</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-        </table>
-
-    </div>
-
-    <!-- 자금 -->
-    <div id="money" class="page">
-
-        <h1>자금 관리</h1>
-
-        <table>
-            <tr>
-                <th>날짜</th>
-                <th>내용</th>
-                <th>금액</th>
-            </tr>
-
-            <tr>
-                <td>2026-06-06</td>
-                <td>조직 수익</td>
-                <td>₩0</td>
-            </tr>
-        </table>
-
-    </div>
-
-    <!-- 보고서 -->
-    <div id="reports" class="page">
-
-        <h1>보고서</h1>
-
-        <table>
-            <tr>
-                <th>작성자</th>
-                <th>제목</th>
-                <th>날짜</th>
-            </tr>
-
-            <tr>
-                <td>MOCHI</td>
-                <td>주간 활동 보고서</td>
-                <td>2026-06-06</td>
-            </tr>
-        </table>
-
-    </div>
-
-    <!-- 설정 -->
-    <div id="settings" class="page">
-
-        <h1>설정</h1>
-
-        <p>관리자 설정 페이지</p>
-
-    </div>
+<div class="card">
+<div class="rank">A.M</div>
+<div class="title">대리</div>
+<div class="people"><span>N/A</span></div>
+</div>
 
 </div>
 
-<script>
-function showPage(pageId){
+</div>
 
-    const pages = document.querySelectorAll('.page');
+<div class="section">
 
-    pages.forEach(page=>{
-        page.classList.remove('active');
-    });
+<div class="section-title">
+👥 Staff
+</div>
 
-    document.getElementById(pageId).classList.add('active');
-}
-</script>
+<div class="grid">
+
+<div class="card">
+<div class="rank">S.S</div>
+<div class="title">선임</div>
+<div class="people"><span>N/A</span></div>
+</div>
+
+<div class="card">
+<div class="rank">Supervisor</div>
+<div class="title">주임</div>
+<div class="people"><span>N/A</span></div>
+</div>
+
+<div class="card">
+<div class="rank">Staff</div>
+<div class="title">사원</div>
+<div class="people"><span>N/A</span></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="section-title">
+📌 Temporary
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="rank">Intern</div>
+<div class="title">인턴</div>
+<div class="people"><span>N/A</span></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<h2>현재 인원</h2>
+
+<div class="bar">
+<div class="fill"></div>
+</div>
+
+<strong>10명 / 50명</strong>
+
+<div class="info">
+<div>📅 최종 수정 : 2026.07.28</div>
+<div>👑 인사 총괄 : 스텔 (CEO)</div>
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
