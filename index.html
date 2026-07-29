@@ -3,157 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Serenade E&M - 직급표</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Serenade E&M</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Pretendard',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Pretendard',sans-serif;
 }
 
 body{
-    background:#0f0f0f;
-    color:#fff;
-    min-height:100vh;
-    padding:50px;
-    background-image:
-    radial-gradient(circle at top,#4d3900 0%,transparent 40%);
+
+background:#161616;
+color:#f5f5f5;
+padding:60px;
+
 }
 
 .container{
-    max-width:1400px;
-    margin:auto;
+
+max-width:1200px;
+margin:auto;
+
 }
 
 .header{
-    text-align:center;
-    margin-bottom:60px;
+
+margin-bottom:50px;
+border-bottom:1px solid #2d2d2d;
+padding-bottom:25px;
+
 }
 
 .header h1{
-    font-size:48px;
-    color:#FFD54A;
-    letter-spacing:4px;
-    text-shadow:
-    0 0 10px #FFD54A,
-    0 0 30px rgba(255,213,74,.5);
+
+font-size:38px;
+font-weight:700;
+color:#d8b44a;
+
 }
 
 .header p{
-    color:#aaa;
-    margin-top:10px;
-    font-size:15px;
+
+margin-top:8px;
+color:#8d8d8d;
+font-size:15px;
+
 }
 
 .section{
-    margin-bottom:50px;
+
+margin-top:45px;
+
 }
 
-.section-title{
-    color:#FFD54A;
-    font-size:26px;
-    font-weight:700;
-    margin-bottom:25px;
-    border-left:5px solid #FFD54A;
-    padding-left:15px;
+.section h2{
+
+font-size:22px;
+font-weight:600;
+margin-bottom:20px;
+padding-left:12px;
+border-left:4px solid #d8b44a;
+
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+gap:18px;
+
 }
 
 .card{
-    background:#181818;
-    border:1px solid rgba(255,213,74,.35);
-    border-radius:18px;
-    padding:22px;
-    transition:.3s;
-    position:relative;
-    overflow:hidden;
-}
 
-.card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(135deg,
-    rgba(255,213,74,.08),
-    transparent 70%);
+background:#202020;
+border:1px solid #313131;
+border-left:5px solid #d8b44a;
+
+padding:18px;
+
+border-radius:8px;
+
+transition:.18s;
+
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#FFD54A;
-    box-shadow:
-    0 0 20px rgba(255,213,74,.4),
-    0 0 50px rgba(255,213,74,.2);
+
+background:#252525;
+
+}
+
+.code{
+
+font-size:12px;
+letter-spacing:1px;
+color:#cfa93f;
+margin-bottom:6px;
+
 }
 
 .rank{
-    font-size:13px;
-    color:#FFD54A;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:8px;
+
+font-size:24px;
+font-weight:700;
+
 }
 
-.title{
-    font-size:28px;
-    font-weight:800;
-    margin-bottom:18px;
+.member{
+
+margin-top:18px;
+line-height:1.8;
+color:#d8d8d8;
+
 }
 
-.people{
-    color:#ddd;
-    line-height:1.8;
-    font-size:16px;
-}
+.empty{
 
-.people span{
-    color:#777;
+color:#666;
+
 }
 
 .footer{
-    margin-top:70px;
-    background:#181818;
-    border:1px solid rgba(255,213,74,.3);
-    border-radius:18px;
-    padding:25px;
+
+margin-top:60px;
+
+border-top:1px solid #2d2d2d;
+
+padding-top:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+flex-wrap:wrap;
+
+color:#8a8a8a;
+
+font-size:14px;
+
 }
 
-.bar{
-    width:100%;
-    height:12px;
-    background:#2b2b2b;
-    border-radius:50px;
-    overflow:hidden;
-    margin:15px 0;
+.status{
+
+margin-top:15px;
+
+padding:14px;
+
+background:#202020;
+
+border:1px solid #313131;
+
+border-radius:6px;
+
 }
 
-.fill{
-    width:20%;
-    height:100%;
-    background:linear-gradient(90deg,#FFD54A,#ffbf00);
+.progress{
+
+height:8px;
+
+background:#2b2b2b;
+
+margin-top:12px;
+
+border-radius:20px;
+
+overflow:hidden;
+
 }
 
-.info{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    color:#bbb;
-    margin-top:15px;
+.progress span{
+
+display:block;
+
+height:100%;
+
+width:20%;
+
+background:#d8b44a;
+
 }
 
-strong{
-    color:#FFD54A;
-}
 </style>
+
 </head>
 
 <body>
@@ -161,48 +200,67 @@ strong{
 <div class="container">
 
 <div class="header">
-<h1>⚜️ SERENADE E&M ⚜️</h1>
-<p>Official Rank Board</p>
+
+<h1>SERENADE E&M</h1>
+
+<p>Official Organization Board</p>
+
 </div>
 
 <div class="section">
 
-<div class="section-title">
-👑 Executive
-</div>
+<h2>Executive</h2>
 
 <div class="grid">
 
 <div class="card">
-<div class="rank">CEO</div>
-<div class="title">대표이사</div>
-<div class="people">스텔</div>
+
+<div class="code">CEO</div>
+
+<div class="rank">대표이사</div>
+
+<div class="member">
+스텔
+</div>
+
 </div>
 
 <div class="card">
-<div class="rank">S.DIR</div>
-<div class="title">전무이사</div>
-<div class="people">
+
+<div class="code">S.DIR</div>
+
+<div class="rank">전무이사</div>
+
+<div class="member">
 스시<br>
 강혁
 </div>
+
 </div>
 
 <div class="card">
-<div class="rank">M.DIR</div>
-<div class="title">상무이사</div>
-<div class="people">
+
+<div class="code">M.DIR</div>
+
+<div class="rank">상무이사</div>
+
+<div class="member">
 마루<br>
 백수
 </div>
+
 </div>
 
 <div class="card">
-<div class="rank">C.DIR</div>
-<div class="title">수석이사</div>
-<div class="people">
-<span>N/A</span>
+
+<div class="code">C.DIR</div>
+
+<div class="rank">수석이사</div>
+
+<div class="member empty">
+N/A
 </div>
+
 </div>
 
 </div>
@@ -211,40 +269,58 @@ strong{
 
 <div class="section">
 
-<div class="section-title">
-🛡 Management
-</div>
+<h2>Management</h2>
 
 <div class="grid">
 
 <div class="card">
-<div class="rank">G.M</div>
-<div class="title">부장</div>
-<div class="people">재현</div>
+
+<div class="code">G.M</div>
+
+<div class="rank">부장</div>
+
+<div class="member">
+재현
+</div>
+
 </div>
 
 <div class="card">
-<div class="rank">D.M</div>
-<div class="title">차장</div>
-<div class="people">
+
+<div class="code">D.M</div>
+
+<div class="rank">차장</div>
+
+<div class="member">
 초코머핀<br>
 효은
 </div>
+
 </div>
 
 <div class="card">
-<div class="rank">MGR</div>
-<div class="title">과장</div>
-<div class="people">
+
+<div class="code">MGR</div>
+
+<div class="rank">과장</div>
+
+<div class="member">
 차차차<br>
 백산
 </div>
+
 </div>
 
 <div class="card">
-<div class="rank">A.M</div>
-<div class="title">대리</div>
-<div class="people"><span>N/A</span></div>
+
+<div class="code">A.M</div>
+
+<div class="rank">대리</div>
+
+<div class="member empty">
+N/A
+</div>
+
 </div>
 
 </div>
@@ -253,28 +329,44 @@ strong{
 
 <div class="section">
 
-<div class="section-title">
-👥 Staff
-</div>
+<h2>Staff</h2>
 
 <div class="grid">
 
 <div class="card">
-<div class="rank">S.S</div>
-<div class="title">선임</div>
-<div class="people"><span>N/A</span></div>
+
+<div class="code">S.S</div>
+
+<div class="rank">선임</div>
+
+<div class="member empty">
+N/A
+</div>
+
 </div>
 
 <div class="card">
-<div class="rank">Supervisor</div>
-<div class="title">주임</div>
-<div class="people"><span>N/A</span></div>
+
+<div class="code">Supervisor</div>
+
+<div class="rank">주임</div>
+
+<div class="member empty">
+N/A
+</div>
+
 </div>
 
 <div class="card">
-<div class="rank">Staff</div>
-<div class="title">사원</div>
-<div class="people"><span>N/A</span></div>
+
+<div class="code">Staff</div>
+
+<div class="rank">사원</div>
+
+<div class="member empty">
+N/A
+</div>
+
 </div>
 
 </div>
@@ -283,35 +375,48 @@ strong{
 
 <div class="section">
 
-<div class="section-title">
-📌 Temporary
-</div>
+<h2>Temporary</h2>
 
 <div class="grid">
 
 <div class="card">
-<div class="rank">Intern</div>
-<div class="title">인턴</div>
-<div class="people"><span>N/A</span></div>
+
+<div class="code">Intern</div>
+
+<div class="rank">인턴</div>
+
+<div class="member empty">
+N/A
 </div>
 
 </div>
+
+</div>
+
+</div>
+
+<div class="status">
+
+<strong>현재 소속 인원</strong>
+
+<div class="progress">
+
+<span></span>
+
+</div>
+
+<p style="margin-top:10px;">10명 / 50명</p>
 
 </div>
 
 <div class="footer">
 
-<h2>현재 인원</h2>
-
-<div class="bar">
-<div class="fill"></div>
+<div>
+최종 수정일 : 2026.07.28
 </div>
 
-<strong>10명 / 50명</strong>
-
-<div class="info">
-<div>📅 최종 수정 : 2026.07.28</div>
-<div>👑 인사 총괄 : 스텔 (CEO)</div>
+<div>
+인사 총괄 : 스텔 (CEO)
 </div>
 
 </div>
