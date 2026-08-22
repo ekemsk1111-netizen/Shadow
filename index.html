@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,107 +11,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background:
-        radial-gradient(circle at 10% 10%, rgba(255, 215, 225, .45), transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(255, 235, 190, .45), transparent 25%),
-        #fffaf6;
-    color: #4c3b35;
     font-family: 'Noto Sans KR', sans-serif;
-    min-height: 100vh;
-    padding: 35px 15px 60px;
+    background: #fff8f5;
+    color: #5b4640;
+    padding: 25px 14px 50px;
 }
 
 /* 전체 */
 .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 850px;
     margin: auto;
 }
 
 /* 상단 */
 .header {
-    background: #ffffff;
-    border: 2px solid #f0ded5;
-    border-radius: 22px;
-    padding: 25px 20px;
+    position: relative;
     text-align: center;
-    margin-bottom: 22px;
-    box-shadow: 0 7px 20px rgba(105, 73, 60, .08);
+    background: #ffffff;
+    border: 2px solid #f3dcd5;
+    border-radius: 28px;
+    padding: 28px 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(120, 78, 65, 0.07);
+    overflow: hidden;
+}
+
+.header::before {
+    content: "♡";
+    position: absolute;
+    left: 25px;
+    top: 18px;
+    font-size: 24px;
+    color: #f1b6b9;
+}
+
+.header::after {
+    content: "♡";
+    position: absolute;
+    right: 25px;
+    bottom: 15px;
+    font-size: 20px;
+    color: #f1b6b9;
 }
 
 .header h1 {
     font-family: 'Jua', sans-serif;
-    font-size: 31px;
-    color: #5b443b;
-    letter-spacing: -1px;
+    font-size: 32px;
+    color: #60463d;
 }
 
 .header p {
-    margin-top: 7px;
+    margin-top: 8px;
     font-size: 13px;
-    color: #aa9187;
+    color: #b69b91;
 }
 
 /* 섹션 */
 .section {
-    background: #fff;
-    border: 2px solid #f0ded5;
-    border-radius: 22px;
-    padding: 22px;
-    margin-bottom: 18px;
-    box-shadow: 0 6px 18px rgba(105, 73, 60, .06);
+    background: #ffffff;
+    border: 2px solid #f1dfd8;
+    border-radius: 25px;
+    padding: 21px;
+    margin-bottom: 17px;
+    box-shadow: 0 6px 16px rgba(120, 78, 65, 0.055);
 }
 
+/* 섹션 제목 */
 .section-title {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
+    gap: 10px;
 
     font-family: 'Jua', sans-serif;
     font-size: 22px;
-    color: #61483e;
+    color: #664b42;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 .section-title::before,
 .section-title::after {
     content: "";
-    height: 1px;
-    flex: 1;
-    background: #ead7ce;
+    height: 2px;
+    width: 70px;
+    border-radius: 20px;
+    background: #f3ddd6;
 }
 
-/* 직급 카드 */
+/* 직급 */
 .rank {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: #fffaf8;
-    border: 1px solid #f1dfd7;
-    border-radius: 15px;
+    background: #fff9f7;
+    border: 1px solid #f2e3de;
 
-    padding: 15px 17px;
+    border-radius: 18px;
+
+    padding: 13px 15px;
     margin-top: 9px;
 
-    transition: .18s ease;
+    transition: .15s ease;
 }
 
 .rank:hover {
-    transform: translateY(-2px);
-    background: #fff6f3;
-    border-color: #e8cfc4;
-    box-shadow: 0 5px 12px rgba(111, 73, 58, .08);
+    background: #fff4f1;
+    border-color: #edcfc7;
+    transform: scale(1.01);
 }
 
+/* 왼쪽 */
 .rank-info {
     display: flex;
     align-items: center;
@@ -118,112 +138,133 @@ body {
 }
 
 .rank-icon {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #fff0e9;
-    border-radius: 12px;
+    background: #fff0eb;
+    border-radius: 14px;
 
-    font-size: 20px;
+    font-size: 21px;
 }
 
+/* 직급 이름 */
 .rank-name {
-    font-weight: 700;
     font-size: 15px;
-    color: #59433a;
+    font-weight: 700;
+    color: #5e4740;
 }
 
+/* 사람 */
 .member {
     font-size: 13px;
-    color: #a18b82;
+    font-weight: 500;
+    color: #9d8177;
     text-align: right;
+    padding-left: 10px;
 }
 
 /* 공석 */
 .member.empty {
-    color: #c7b8b1;
+    color: #c9b7b0;
 }
 
 /* 하단 */
 .footer {
+    position: relative;
+    overflow: hidden;
+
     background: #ffffff;
-    border: 2px solid #f0ded5;
-    border-radius: 22px;
-    text-align: center;
+    border: 2px solid #f1ddd6;
+    border-radius: 27px;
 
     padding: 25px 20px;
-    margin-top: 5px;
 
-    box-shadow: 0 7px 20px rgba(105, 73, 60, .07);
+    text-align: center;
+
+    box-shadow: 0 7px 18px rgba(120, 78, 65, .06);
+}
+
+.footer::before {
+    content: "🧸";
+    position: absolute;
+    left: 18px;
+    bottom: 10px;
+    font-size: 25px;
+    opacity: .35;
+}
+
+.footer::after {
+    content: "🧸";
+    position: absolute;
+    right: 18px;
+    top: 10px;
+    font-size: 25px;
+    opacity: .35;
 }
 
 .footer-title {
     font-family: 'Jua', sans-serif;
-    font-size: 24px;
-    color: #61483e;
+    font-size: 25px;
+    color: #614940;
 }
 
 .footer-sub {
-    margin-top: 10px;
+    margin-top: 9px;
     font-family: 'Jua', sans-serif;
     font-size: 17px;
-    color: #b08e82;
-    letter-spacing: 1px;
-}
-
-.count {
-    display: inline-block;
-    margin-top: 8px;
-
-    padding: 7px 15px;
-    border-radius: 20px;
-
-    background: #fff0e9;
-    color: #a16f60;
-
-    font-size: 13px;
-    font-weight: 700;
+    color: #b38f83;
 }
 
 /* 모바일 */
 @media (max-width: 600px) {
 
     body {
-        padding: 20px 10px 40px;
+        padding: 18px 10px 35px;
     }
 
     .header h1 {
-        font-size: 26px;
+        font-size: 27px;
     }
 
     .section {
         padding: 16px;
+        border-radius: 21px;
     }
 
     .section-title {
         font-size: 19px;
     }
 
+    .section-title::before,
+    .section-title::after {
+        width: 35px;
+    }
+
     .rank {
-        padding: 13px;
+        padding: 12px;
     }
 
     .rank-name {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .member {
-        font-size: 12px;
-        max-width: 120px;
+        font-size: 11px;
+        max-width: 135px;
     }
 
     .rank-icon {
-        width: 34px;
-        height: 34px;
-        font-size: 18px;
+        width: 36px;
+        height: 36px;
+        font-size: 19px;
+    }
+
+    .footer-title {
+        font-size: 21px;
     }
 }
 </style>
@@ -233,10 +274,10 @@ body {
 
 <div class="container">
 
-    <!-- HEADER -->
+    <!-- 상단 -->
     <div class="header">
         <h1>🧸 말랑이파 조직도 🧸</h1>
-        <p>말랑하게 모여서, 오래오래 함께</p>
+        <p>말랑말랑하게, 우리끼리 오래오래 ♡</p>
     </div>
 
 
@@ -250,40 +291,25 @@ body {
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑두목
-                </div>
+                <div class="rank-name">말랑이파 말랑두목</div>
             </div>
-
-            <div class="member">
-                선비
-            </div>
+            <div class="member">선비</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑부두목
-                </div>
+                <div class="rank-name">말랑이파 말랑부두목</div>
             </div>
-
-            <div class="member">
-                선제
-            </div>
+            <div class="member">선제</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑수장
-                </div>
+                <div class="rank-name">말랑이파 말랑수장</div>
             </div>
-
-            <div class="member empty">
-                공석
-            </div>
+            <div class="member empty">공석</div>
         </div>
 
     </div>
@@ -299,40 +325,25 @@ body {
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑간부
-                </div>
+                <div class="rank-name">말랑이파 말랑간부</div>
             </div>
-
-            <div class="member empty">
-                -
-            </div>
+            <div class="member empty">-</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑관리자
-                </div>
+                <div class="rank-name">말랑이파 말랑관리자</div>
             </div>
-
-            <div class="member empty">
-                공석
-            </div>
+            <div class="member empty">공석</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑실장
-                </div>
+                <div class="rank-name">말랑이파 말랑실장</div>
             </div>
-
-            <div class="member">
-                마카체프 · 세만
-            </div>
+            <div class="member">마카체프 · 세만</div>
         </div>
 
     </div>
@@ -348,50 +359,32 @@ body {
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑이
-                </div>
+                <div class="rank-name">말랑이파 말랑이</div>
             </div>
-
-            <div class="member">
-                상어
-            </div>
+            <div class="member">상어</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑콩
-                </div>
+                <div class="rank-name">말랑이파 말랑콩</div>
             </div>
-
-            <div class="member">
-                자피 · 단비
-            </div>
+            <div class="member">자피 · 단비</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑친구
-                </div>
+                <div class="rank-name">말랑이파 말랑친구</div>
             </div>
-
-            <div class="member empty">
-                -
-            </div>
+            <div class="member empty">-</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑단원
-                </div>
+                <div class="rank-name">말랑이파 말랑단원</div>
             </div>
-
             <div class="member">
                 해달 · 설유키 · 야망 · 뉴비
             </div>
@@ -410,61 +403,40 @@ body {
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑토끼
-                </div>
+                <div class="rank-name">말랑이파 말랑토끼</div>
             </div>
-
-            <div class="member empty">
-                공석
-            </div>
+            <div class="member empty">공석</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑딸기
-                </div>
+                <div class="rank-name">말랑이파 말랑딸기</div>
             </div>
-
-            <div class="member">
-                뽀삐
-            </div>
+            <div class="member">뽀삐</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑핑크
-                </div>
+                <div class="rank-name">말랑이파 말랑핑크</div>
             </div>
-
-            <div class="member empty">
-                공석
-            </div>
+            <div class="member empty">공석</div>
         </div>
 
         <div class="rank">
             <div class="rank-info">
                 <div class="rank-icon">🧸</div>
-                <div class="rank-name">
-                    말랑이파 말랑스타
-                </div>
+                <div class="rank-name">말랑이파 말랑스타</div>
             </div>
-
-            <div class="member">
-                말랑이마스터 · wonwin
-            </div>
+            <div class="member">말랑이마스터 · wonwin</div>
         </div>
 
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- 마지막 -->
     <div class="footer">
-
         <div class="footer-title">
             🧸 말랑이파 𝗙𝗢𝗥𝗘𝗩𝗘𝗥 🧸
         </div>
@@ -472,14 +444,11 @@ body {
         <div class="footer-sub">
             - 𝓛𝓲𝓼𝓽 -
         </div>
-
-        <div class="count">
-            [ 14 / 50 ]
-        </div>
-
     </div>
 
 </div>
 
 </body>
 </html>
+```
+
