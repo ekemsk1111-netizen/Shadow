@@ -4,422 +4,480 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Serenade E&M</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>🧸 말랑이파 조직도</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Pretendard',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-background:#161616;
-color:#f5f5f5;
-padding:60px;
-
+body {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255, 215, 225, .45), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(255, 235, 190, .45), transparent 25%),
+        #fffaf6;
+    color: #4c3b35;
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    padding: 35px 15px 60px;
 }
 
-.container{
-
-max-width:1200px;
-margin:auto;
-
+/* 전체 */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
 }
 
-.header{
-
-margin-bottom:50px;
-border-bottom:1px solid #2d2d2d;
-padding-bottom:25px;
-
+/* 상단 */
+.header {
+    background: #ffffff;
+    border: 2px solid #f0ded5;
+    border-radius: 22px;
+    padding: 25px 20px;
+    text-align: center;
+    margin-bottom: 22px;
+    box-shadow: 0 7px 20px rgba(105, 73, 60, .08);
 }
 
-.header h1{
-
-font-size:38px;
-font-weight:700;
-color:#d8b44a;
-
+.header h1 {
+    font-family: 'Jua', sans-serif;
+    font-size: 31px;
+    color: #5b443b;
+    letter-spacing: -1px;
 }
 
-.header p{
-
-margin-top:8px;
-color:#8d8d8d;
-font-size:15px;
-
+.header p {
+    margin-top: 7px;
+    font-size: 13px;
+    color: #aa9187;
 }
 
-.section{
-
-margin-top:45px;
-
+/* 섹션 */
+.section {
+    background: #fff;
+    border: 2px solid #f0ded5;
+    border-radius: 22px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 18px rgba(105, 73, 60, .06);
 }
 
-.section h2{
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-font-size:22px;
-font-weight:600;
-margin-bottom:20px;
-padding-left:12px;
-border-left:4px solid #d8b44a;
+    font-family: 'Jua', sans-serif;
+    font-size: 22px;
+    color: #61483e;
 
+    margin-bottom: 18px;
 }
 
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-gap:18px;
-
+.section-title::before,
+.section-title::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #ead7ce;
 }
 
-.card{
+/* 직급 카드 */
+.rank {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-background:#202020;
-border:1px solid #313131;
-border-left:5px solid #d8b44a;
+    background: #fffaf8;
+    border: 1px solid #f1dfd7;
+    border-radius: 15px;
 
-padding:18px;
+    padding: 15px 17px;
+    margin-top: 9px;
 
-border-radius:8px;
-
-transition:.18s;
-
+    transition: .18s ease;
 }
 
-.card:hover{
-
-background:#252525;
-
+.rank:hover {
+    transform: translateY(-2px);
+    background: #fff6f3;
+    border-color: #e8cfc4;
+    box-shadow: 0 5px 12px rgba(111, 73, 58, .08);
 }
 
-.code{
-
-font-size:12px;
-letter-spacing:1px;
-color:#cfa93f;
-margin-bottom:6px;
-
+.rank-info {
+    display: flex;
+    align-items: center;
+    gap: 11px;
 }
 
-.rank{
+.rank-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-font-size:24px;
-font-weight:700;
+    background: #fff0e9;
+    border-radius: 12px;
 
+    font-size: 20px;
 }
 
-.member{
-
-margin-top:18px;
-line-height:1.8;
-color:#d8d8d8;
-
+.rank-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #59433a;
 }
 
-.empty{
-
-color:#666;
-
+.member {
+    font-size: 13px;
+    color: #a18b82;
+    text-align: right;
 }
 
-.footer{
-
-margin-top:60px;
-
-border-top:1px solid #2d2d2d;
-
-padding-top:25px;
-
-display:flex;
-
-justify-content:space-between;
-
-flex-wrap:wrap;
-
-color:#8a8a8a;
-
-font-size:14px;
-
+/* 공석 */
+.member.empty {
+    color: #c7b8b1;
 }
 
-.status{
+/* 하단 */
+.footer {
+    background: #ffffff;
+    border: 2px solid #f0ded5;
+    border-radius: 22px;
+    text-align: center;
 
-margin-top:15px;
+    padding: 25px 20px;
+    margin-top: 5px;
 
-padding:14px;
-
-background:#202020;
-
-border:1px solid #313131;
-
-border-radius:6px;
-
+    box-shadow: 0 7px 20px rgba(105, 73, 60, .07);
 }
 
-.progress{
-
-height:8px;
-
-background:#2b2b2b;
-
-margin-top:12px;
-
-border-radius:20px;
-
-overflow:hidden;
-
+.footer-title {
+    font-family: 'Jua', sans-serif;
+    font-size: 24px;
+    color: #61483e;
 }
 
-.progress span{
-
-display:block;
-
-height:100%;
-
-width:20%;
-
-background:#d8b44a;
-
+.footer-sub {
+    margin-top: 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 17px;
+    color: #b08e82;
+    letter-spacing: 1px;
 }
 
+.count {
+    display: inline-block;
+    margin-top: 8px;
+
+    padding: 7px 15px;
+    border-radius: 20px;
+
+    background: #fff0e9;
+    color: #a16f60;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px 40px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .section {
+        padding: 16px;
+    }
+
+    .section-title {
+        font-size: 19px;
+    }
+
+    .rank {
+        padding: 13px;
+    }
+
+    .rank-name {
+        font-size: 14px;
+    }
+
+    .member {
+        font-size: 12px;
+        max-width: 120px;
+    }
+
+    .rank-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+}
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
-<div class="header">
-
-<h1>SERENADE E&M</h1>
-
-<p>Official Organization Board</p>
-
-</div>
-
-<div class="section">
-
-<h2>Executive</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="code">CEO</div>
-
-<div class="rank">대표이사</div>
-
-<div class="member">
-스텔
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">S.DIR</div>
-
-<div class="rank">전무이사</div>
-
-<div class="member">
-스시<br>
-강혁
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">M.DIR</div>
-
-<div class="rank">상무이사</div>
-
-<div class="member">
-마루<br>
-백수
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">C.DIR</div>
-
-<div class="rank">수석이사</div>
-
-<div class="member empty">
-N/A
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Management</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="code">G.M</div>
-
-<div class="rank">부장</div>
-
-<div class="member">
-재현
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">D.M</div>
-
-<div class="rank">차장</div>
-
-<div class="member">
-초코머핀<br>
-효은
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">MGR</div>
-
-<div class="rank">과장</div>
-
-<div class="member">
-차차차<br>
-백산
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">A.M</div>
-
-<div class="rank">대리</div>
-
-<div class="member empty">
-N/A
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Staff</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="code">S.S</div>
-
-<div class="rank">선임</div>
-
-<div class="member empty">
-N/A
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">Supervisor</div>
-
-<div class="rank">주임</div>
-
-<div class="member empty">
-N/A
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="code">Staff</div>
-
-<div class="rank">사원</div>
-
-<div class="member empty">
-N/A
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Temporary</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="code">Intern</div>
-
-<div class="rank">인턴</div>
-
-<div class="member empty">
-N/A
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="status">
-
-<strong>현재 소속 인원</strong>
-
-<div class="progress">
-
-<span></span>
-
-</div>
-
-<p style="margin-top:10px;">10명 / 50명</p>
-
-</div>
-
-<div class="footer">
-
-<div>
-최종 수정일 : 2026.07.28
-</div>
-
-<div>
-인사 총괄 : 스텔 (CEO)
-</div>
-
-</div>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🧸 말랑이파 조직도 🧸</h1>
+        <p>말랑하게 모여서, 오래오래 함께</p>
+    </div>
+
+
+    <!-- 고위직 -->
+    <div class="section">
+
+        <div class="section-title">
+            🧸 고위직 🧸
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑두목
+                </div>
+            </div>
+
+            <div class="member">
+                선비
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑부두목
+                </div>
+            </div>
+
+            <div class="member">
+                선제
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑수장
+                </div>
+            </div>
+
+            <div class="member empty">
+                공석
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 간부직 -->
+    <div class="section">
+
+        <div class="section-title">
+            🧸 간부직 🧸
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑간부
+                </div>
+            </div>
+
+            <div class="member empty">
+                -
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑관리자
+                </div>
+            </div>
+
+            <div class="member empty">
+                공석
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑실장
+                </div>
+            </div>
+
+            <div class="member">
+                마카체프 · 세만
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 일반직 -->
+    <div class="section">
+
+        <div class="section-title">
+            🧸 일반직 🧸
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑이
+                </div>
+            </div>
+
+            <div class="member">
+                상어
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑콩
+                </div>
+            </div>
+
+            <div class="member">
+                자피 · 단비
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑친구
+                </div>
+            </div>
+
+            <div class="member empty">
+                -
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑단원
+                </div>
+            </div>
+
+            <div class="member">
+                해달 · 설유키 · 야망 · 뉴비
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 특수직 -->
+    <div class="section">
+
+        <div class="section-title">
+            🧸 특수직 🧸
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑토끼
+                </div>
+            </div>
+
+            <div class="member empty">
+                공석
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑딸기
+                </div>
+            </div>
+
+            <div class="member">
+                뽀삐
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑핑크
+                </div>
+            </div>
+
+            <div class="member empty">
+                공석
+            </div>
+        </div>
+
+        <div class="rank">
+            <div class="rank-info">
+                <div class="rank-icon">🧸</div>
+                <div class="rank-name">
+                    말랑이파 말랑스타
+                </div>
+            </div>
+
+            <div class="member">
+                말랑이마스터 · wonwin
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+
+        <div class="footer-title">
+            🧸 말랑이파 𝗙𝗢𝗥𝗘𝗩𝗘𝗥 🧸
+        </div>
+
+        <div class="footer-sub">
+            - 𝓛𝓲𝓼𝓽 -
+        </div>
+
+        <div class="count">
+            [ 14 / 50 ]
+        </div>
+
+    </div>
 
 </div>
 
